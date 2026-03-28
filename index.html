@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coufoh Shade Limited | Building Consultancy by COUFOH™</title>
+  <meta name="description" content="Coufoh Shade Limited is a building consultancy umbrella for construction, real estate, smart homes, painting/finishing, and facility management." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --color-primary: #5C2E0E;
+      --color-primary-dark: #3D1A08;
+      --color-secondary: #C9A87C;
+      --color-secondary-light: #DFC9A8;
+      --color-background: #FAF7F4;
+      --color-surface: #FFFFFF;
+      --color-text-primary: #3D1A08;
+      --color-text-secondary: #7A6050;
+      --color-border: #BFB5A8;
+    }
+
+    body { background: var(--color-background); color: var(--color-text-secondary); }
+    h1, h2, h3, h4 { color: var(--color-text-primary); }
+
+    header {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .brand, header nav a { color: var(--color-primary); }
+    header nav a { position: relative; }
+    header nav a:hover, header nav a:focus-visible, header nav a.active { color: var(--color-primary-dark); }
+    header nav a:hover::after, header nav a:focus-visible::after, header nav a.active::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: -6px;
+      height: 2px;
+      background: var(--color-secondary);
+    }
+
+    header .brand-badge {
+      background: var(--color-secondary-light);
+      color: var(--color-primary-dark);
+      border: 1px solid var(--color-border);
+    }
+
+    header .nav-cta {
+      background: var(--color-primary);
+      color: #fff;
+      border: 1px solid var(--color-primary);
+    }
+    header .nav-cta:hover { background: var(--color-primary-dark); border-color: var(--color-primary-dark); }
+
+    #hero, #about { background: var(--color-background); }
+    #hero p, #about p, #about li { color: var(--color-text-secondary); }
+    #hero .kicker, #hero .tm, #about .step-label { color: var(--color-secondary); }
+    #hero .hero-shape { border-color: var(--color-secondary); }
+
+    .hero-primary-cta {
+      background: var(--color-primary);
+      color: #fff;
+      border: 1px solid var(--color-primary);
+    }
+    .hero-primary-cta:hover { background: var(--color-primary-dark); border-color: var(--color-primary-dark); }
+    .hero-secondary-cta {
+      border: 1px solid var(--color-primary);
+      color: var(--color-primary);
+      background: transparent;
+    }
+    .hero-secondary-cta:hover { background: var(--color-primary-dark); color: #fff; border-color: var(--color-primary-dark); }
+
+    .proof-bar { background: var(--color-secondary-light); }
+    .proof-bar p { color: var(--color-text-primary); }
+    .proof-bar .proof-accent { color: var(--color-primary); }
+
+    #services { background: var(--color-surface); }
+    #services h2, #services h4 { color: var(--color-text-primary); }
+    #services p { color: var(--color-text-secondary); }
+    #services .service-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+    }
+    #services .service-card.featured {
+      border-color: var(--color-secondary);
+      background: var(--color-secondary-light);
+    }
+
+    #contact { background: var(--color-primary); }
+    #contact h2, #contact p, #contact label { color: #fff; }
+    #contact .kicker { color: var(--color-secondary-light); }
+    #contact form {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid color-mix(in srgb, var(--color-border) 65%, transparent);
+    }
+    input, select, textarea {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-primary);
+    }
+    input::placeholder, textarea::placeholder { color: var(--color-text-secondary); }
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid color-mix(in srgb, var(--color-secondary) 55%, transparent);
+      border-color: var(--color-secondary);
+    }
+    #contact .submit-btn {
+      background: var(--color-secondary);
+      color: var(--color-primary-dark);
+      border: 1px solid var(--color-secondary);
+    }
+    #contact .submit-btn:hover {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+
+    footer {
+      background: var(--color-primary-dark);
+      color: var(--color-secondary-light);
+      border-top: 1px solid var(--color-border);
+    }
+    footer p, footer a { color: var(--color-secondary-light); }
+    footer a:hover { color: var(--color-secondary); }
+
+    hr, .border, .border-t, .border-b, .border-y { border-color: var(--color-border) !important; }
+    .icon-accent, .decor-accent { fill: var(--color-secondary); color: var(--color-secondary); }
+
+    #hero {
+      background: #1A0A02 !important;
+    }
+    #hero h1,
+    #hero p,
+    #hero li {
+      color: #fff !important;
+    }
+    #hero .kicker,
+    #hero .tm {
+      color: #C9A87C !important;
+    }
+    #hero p:not(.kicker) {
+      opacity: 0.85;
+    }
+    #hero .hero-shape {
+      border-color: #C9A87C !important;
+      opacity: 0.6 !important;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="fixed top-0 left-0 w-full z-[100] backdrop-blur-md border-b">
+    <div class="mx-auto max-w-7xl px-4 md:px-8">
+      <div class="h-14 md:h-16 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="brand-badge w-8 h-8 rounded-md font-black grid place-items-center text-[11px]">CS</div>
+          <div class="text-xs md:text-sm font-black tracking-[0.16em]">COUFOH SHADE LIMITED</div>
+        </div>
+
+        <nav class="hidden md:flex flex-1 items-center justify-center">
+          <div class="flex items-center gap-7 text-[11px] font-semibold tracking-wide">
+            <a href="#hero" class="transition-colors">Home</a>
+            <a href="#about" class="transition-colors">About</a>
+            <a href="#services" class="transition-colors">Services</a>
+            <a href="#contact" class="transition-colors">Contact</a>
+          </div>
+        </nav>
+
+        <a href="#contact" class="nav-cta px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all">
+          Request Consultation
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+
+    <section id="hero" class="relative min-h-screen flex flex-col justify-center px-6 md:px-24 overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none opacity-40" style="background:radial-gradient(circle at 20% 20%, rgba(201,168,124,.22), transparent 40%),radial-gradient(circle at 80% 15%, rgba(201,168,124,.18), transparent 45%);"></div>
+
+      <div class="max-w-7xl w-full grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <p class="kicker font-black tracking-[0.4em] uppercase text-[10px] mb-6">Building the Future with Integrity and Innovation</p>
+          <h1 id="hero-title" class="text-5xl md:text-[6.2rem] font-black leading-tight md:leading-[1.02] tracking-tight mb-6">
+            BUILDING CONSULTANCY<br />
+            by COUFOH<span class="tm">™</span>
+          </h1>
+          <p class="max-w-xl text-sm md:text-base font-medium opacity-80 mb-6">
+            One umbrella for everything tied to building: advisory, construction, real estate development,
+            smart homes, painting/finishing, and facility management.
+          </p>
+          <div class="mt-8 flex gap-3 flex-wrap">
+            <a href="#contact" class="hero-primary-cta px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest">Request Consultation</a>
+            <a href="#services" class="hero-secondary-cta px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest">View Services</a>
+          </div>
+        </div>
+
+        <div id="hero-deco" class="relative hidden md:block h-[440px] will-change-transform transition-transform duration-150">
+          <div class="hero-shape absolute right-20 top-24 w-64 h-64 rounded-full border-2 shadow-[0_0_50px_rgba(201,168,124,.2)]"></div>
+          <div class="hero-shape absolute right-0 top-6 w-80 h-80 rounded-full border-2 shadow-[0_0_60px_rgba(201,168,124,.18)]"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-bar relative z-10 backdrop-blur-md border-y py-10 px-6 md:px-24">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-6 items-stretch">
+        <div class="p-5 rounded-2xl border">
+          <p class="proof-accent text-3xl font-black">6</p>
+          <p class="text-[11px] uppercase tracking-widest font-bold opacity-70 mt-1">Core Service Lines</p>
+        </div>
+        <div class="p-5 rounded-2xl border">
+          <p class="proof-accent text-3xl font-black">End-to-End</p>
+          <p class="text-[11px] uppercase tracking-widest font-bold opacity-70 mt-1">From Strategy to Operations</p>
+        </div>
+        <div class="p-5 rounded-2xl border">
+          <p class="proof-accent text-3xl font-black">Ltd</p>
+          <p class="text-[11px] uppercase tracking-widest font-bold opacity-70 mt-1">Registered Private Company</p>
+        </div>
+        <div class="p-5 rounded-2xl border">
+          <p class="text-sm italic opacity-90">"Consultancy-led delivery for everything building-related."</p>
+          <p class="text-xs mt-3 font-bold">COUFOH SHADE LIMITED</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="relative min-h-[70vh] py-24 px-6 md:px-24">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div>
+          <h2 class="text-5xl md:text-7xl font-black leading-tight tracking-tighter mb-6">Built-environment delivery <br />under one roof.</h2>
+          <p class="text-lg font-medium opacity-70">From advisory and planning through construction, finishing, smart systems and facility operations.</p>
+        </div>
+        <div class="space-y-10">
+          <div>
+            <div class="step-label text-[10px] font-black tracking-[0.4em] mb-3">01</div>
+            <h3 class="text-3xl font-black mb-2">Advisory First</h3>
+            <p class="text-lg font-medium opacity-60">We map scope, risk, and execution strategy before site work begins.</p>
+          </div>
+          <div>
+            <div class="step-label text-[10px] font-black tracking-[0.4em] mb-3">02</div>
+            <h3 class="text-3xl font-black mb-2">Execution Discipline</h3>
+            <p class="text-lg font-medium opacity-60">Construction, contracts, smart systems, and finishing aligned to outcomes.</p>
+          </div>
+          <div>
+            <div class="step-label text-[10px] font-black tracking-[0.4em] mb-3">03</div>
+            <h3 class="text-3xl font-black mb-2">Lifecycle Support</h3>
+            <p class="text-lg font-medium opacity-60">Facility management and optimization to protect long-term asset value.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-24 px-6 md:px-24">
+      <div class="max-w-7xl mx-auto text-center mb-16">
+        <h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-6">Service Stack.</h2>
+        <p class="text-lg opacity-60 max-w-3xl mx-auto">Everything related to building — structured as one consultancy-led delivery system.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="service-card p-8 border rounded-sm"><h4 class="text-xs font-black tracking-[0.3em] uppercase mb-4">CONSULTANCY</h4><p class="text-sm opacity-70">Master planning, technical advisory, feasibility guidance, and execution strategy.</p></div>
+        <div class="service-card featured p-8 border rounded-sm"><h4 class="text-xs font-black tracking-[0.3em] uppercase mb-4">CONSTRUCTION</h4><p class="text-sm opacity-70">Construction and general contracts from planning through delivery and handover.</p></div>
+        <div class="service-card p-8 border rounded-sm"><h4 class="text-xs font-black tracking-[0.3em] uppercase mb-4">REAL ESTATE</h4><p class="text-sm opacity-70">Residential, commercial, and mixed-use development built for performance and value.</p></div>
+        <div class="service-card p-8 border rounded-sm"><h4 class="text-xs font-black tracking-[0.3em] uppercase mb-4">SMART HOMES</h4><p class="text-sm opacity-70">Automation, security, and connected controls for intelligent living environments.</p></div>
+        <div class="service-card p-8 border rounded-sm"><h4 class="text-xs font-black tracking-[0.3em] uppercase mb-4">PAINTING/FINISHING</h4><p class="text-sm opacity-70">Interior and exterior finishing services for durability and premium presentation.</p></div>
+        <div class="service-card p-8 border rounded-sm"><h4 class="text-xs font-black tracking-[0.3em] uppercase mb-4">FACILITY MANAGEMENT</h4><p class="text-sm opacity-70">Maintenance and operations support to preserve asset functionality and value.</p></div>
+      </div>
+    </section>
+
+    <section id="contact" class="min-h-[70vh] flex flex-col justify-center items-center text-center px-6 py-24">
+      <p class="kicker font-black tracking-[0.5em] uppercase text-[10px] mb-8">Final Step</p>
+      <h2 class="text-5xl md:text-7xl font-black leading-tight tracking-tighter mb-8 max-w-5xl">Request a Project Consultation.</h2>
+      <p class="text-xl font-medium opacity-70 mb-10 max-w-3xl">Share your project scope and service need. We’ll respond with the right execution pathway.</p>
+
+      <form id="leadForm" novalidate class="w-full max-w-2xl border rounded-2xl p-5 text-left">
+        <div class="grid md:grid-cols-2 gap-3">
+          <label class="text-xs uppercase tracking-wider font-bold">Full Name
+            <input type="text" name="name" required placeholder="Your full name" class="mt-2 w-full rounded-xl border px-3 py-2" />
+          </label>
+          <label class="text-xs uppercase tracking-wider font-bold">Email
+            <input type="email" name="email" required placeholder="you@company.com" class="mt-2 w-full rounded-xl border px-3 py-2" />
+          </label>
+          <label class="text-xs uppercase tracking-wider font-bold">Phone
+            <input type="tel" name="phone" required placeholder="+234..." class="mt-2 w-full rounded-xl border px-3 py-2" />
+          </label>
+          <label class="text-xs uppercase tracking-wider font-bold">Service Needed
+            <select name="service" required class="mt-2 w-full rounded-xl border px-3 py-2">
+              <option value="">Select a service</option>
+              <option>Building Consultancy</option>
+              <option>Construction & General Contracts</option>
+              <option>Real Estate Development</option>
+              <option>Smart Home Solutions</option>
+              <option>Painting & Finishing Works</option>
+              <option>Facility Management</option>
+            </select>
+          </label>
+        </div>
+        <label class="block mt-3 text-xs uppercase tracking-wider font-bold">Project Brief
+          <textarea name="message" rows="4" required placeholder="Briefly describe your project" class="mt-2 w-full rounded-xl border px-3 py-2"></textarea>
+        </label>
+        <button type="submit" class="submit-btn mt-4 px-6 py-3 rounded-full text-[10px] font-black uppercase tracking-widest">Submit Enquiry</button>
+        <p id="formMsg" class="text-sm mt-3"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="border-t py-10">
+    <div class="mx-auto max-w-7xl px-6 md:px-8 grid md:grid-cols-3 gap-8 text-sm">
+      <div>
+        <p class="font-black tracking-[0.2em] text-xs uppercase mb-3">Coufoh Shade Limited</p>
+        <p>Building consultancy and end-to-end built-environment delivery.</p>
+      </div>
+
+      <div>
+        <p class="font-black tracking-[0.2em] text-xs uppercase mb-3">Quick Links</p>
+        <div class="flex flex-col gap-2">
+          <a href="#hero" >Home</a>
+          <a href="#about" >About</a>
+          <a href="#services" >Services</a>
+          <a href="#contact" >Request Consultation</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="font-black tracking-[0.2em] text-xs uppercase mb-3">Contact</p>
+        <div class="space-y-1">
+          <p>Kubwa, Abuja, FCT</p>
+          <p><a href="tel:+2348036630034" >+234 803 6630 034</a></p>
+          <p><a href="tel:+2349023531068" >+234 902 353 1068</a></p>
+          <p><a href="mailto:coufoh@gmail.com" >coufoh@gmail.com</a></p>
+          <p><a href="mailto:coufoh24@outlook.com" >coufoh24@outlook.com</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-7xl px-6 md:px-8 mt-8 pt-4 border-t flex flex-col md:flex-row justify-between gap-2 text-xs">
+      <p>© <span id="year"></span> Coufoh Shade Limited</p>
+      <p>Built with Nova WebForge OS™ (TBN Basic Plan)</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+  <script>
+    (() => {
+      const rootStyles = getComputedStyle(document.documentElement);
+      const ACCENT = rootStyles.getPropertyValue('--color-secondary').trim() || '#C9A87C';
+      const PRIMARY = rootStyles.getPropertyValue('--color-primary').trim() || '#5C2E0E';
+      const PRIMARY_DARK = rootStyles.getPropertyValue('--color-primary-dark').trim() || '#3D1A08';
+
+      const hexToRgb = (hex) => {
+        const clean = hex.replace('#', '').trim();
+        const full = clean.length === 3 ? clean.split('').map(c => c + c).join('') : clean;
+        const n = parseInt(full, 16);
+        return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
+      };
+      const accentRgb = hexToRgb(ACCENT);
+
+      // --- Base enhancement styles ---
+      const style = document.createElement('style');
+      style.textContent = `
+        html, body, a, button, input, textarea, select, [role="button"] { cursor: none !important; }
+        #hero { position: relative; }
+        #hero .hero-particles-canvas {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          pointer-events: none;
+        }
+        #hero > .max-w-7xl { position: relative; z-index: 1; }
+        header { transition: background-color .28s ease, backdrop-filter .28s ease, box-shadow .28s ease; }
+        header.nav-scrolled {
+          background: color-mix(in srgb, var(--color-primary) 90%, #000 10%) !important;
+          backdrop-filter: blur(16px);
+          box-shadow: 0 8px 30px rgba(0,0,0,.2);
+        }
+        .reveal-init {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity .65s ease-out, transform .65s ease-out;
+          will-change: opacity, transform;
+        }
+        .reveal-in {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .cursor-dot,
+        .cursor-ring {
+          position: fixed;
+          left: 0;
+          top: 0;
+          pointer-events: none;
+          z-index: 9999;
+          transform: translate(-50%, -50%);
+        }
+        .cursor-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 999px;
+          background: ${PRIMARY};
+        }
+        .cursor-ring {
+          width: 32px;
+          height: 32px;
+          border-radius: 999px;
+          border: 2px solid rgba(${accentRgb.r},${accentRgb.g},${accentRgb.b},.55);
+          transition: transform .18s ease, border-color .18s ease;
+        }
+        .cursor-ring.is-hover {
+          border-color: ${PRIMARY_DARK};
+          transform: translate(-50%, -50%) scale(1.35);
+        }
+      `;
+      document.head.appendChild(style);
+
+      // --- Custom cursor ---
+      const dot = document.createElement('div');
+      dot.className = 'cursor-dot';
+      const ring = document.createElement('div');
+      ring.className = 'cursor-ring';
+      document.body.append(dot, ring);
+
+      let mouseX = window.innerWidth / 2;
+      let mouseY = window.innerHeight / 2;
+      let ringX = mouseX;
+      let ringY = mouseY;
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        dot.style.left = mouseX + 'px';
+        dot.style.top = mouseY + 'px';
+      });
+
+      const hoverTargets = 'a, button, h1, h2, h3, [role="button"]';
+      document.querySelectorAll(hoverTargets).forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('is-hover'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('is-hover'));
+      });
+
+      function animateRing() {
+        ringX += (mouseX - ringX) * 0.18;
+        ringY += (mouseY - ringY) * 0.18;
+        ring.style.left = ringX + 'px';
+        ring.style.top = ringY + 'px';
+        requestAnimationFrame(animateRing);
+      }
+      animateRing();
+
+      // --- Hero particles ---
+      const hero = document.getElementById('hero');
+      if (hero) {
+        const canvas = document.createElement('canvas');
+        canvas.className = 'hero-particles-canvas';
+        hero.prepend(canvas);
+        const ctx = canvas.getContext('2d');
+        const particles = [];
+        const COUNT = 60;
+
+        function resizeCanvas() {
+          const rect = hero.getBoundingClientRect();
+          canvas.width = Math.max(1, rect.width);
+          canvas.height = Math.max(1, rect.height);
+        }
+
+        function spawnParticle() {
+          return {
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 2 + 1,
+            vx: (Math.random() - 0.5) * 0.25,
+            vy: -(Math.random() * 0.45 + 0.15),
+            alpha: Math.random() * 0.1 + 0.22
+          };
+        }
+
+        resizeCanvas();
+        for (let i = 0; i < COUNT; i++) particles.push(spawnParticle());
+        window.addEventListener('resize', resizeCanvas);
+
+        function drawParticles() {
+          if (!ctx) return;
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            p.x += p.vx;
+            p.y += p.vy;
+
+            if (p.y < -8) {
+              p.y = canvas.height + 8;
+              p.x = Math.random() * canvas.width;
+            }
+            if (p.x < -10) p.x = canvas.width + 10;
+            if (p.x > canvas.width + 10) p.x = -10;
+
+            ctx.beginPath();
+            ctx.fillStyle = `rgba(${accentRgb.r},${accentRgb.g},${accentRgb.b},${p.alpha})`;
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+              const a = particles[i], b = particles[j];
+              const dx = a.x - b.x;
+              const dy = a.y - b.y;
+              const dist = Math.hypot(dx, dy);
+              if (dist < 120) {
+                const op = (1 - dist / 120) * 0.3;
+                ctx.strokeStyle = `rgba(${accentRgb.r},${accentRgb.g},${accentRgb.b},${op})`;
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(a.x, a.y);
+                ctx.lineTo(b.x, b.y);
+                ctx.stroke();
+              }
+            }
+          }
+
+          requestAnimationFrame(drawParticles);
+        }
+        drawParticles();
+      }
+
+      // --- Scroll reveal animation ---
+      const revealTargets = document.querySelectorAll('h1, h2, h3, p, .card, .why-grid > div, .p-8, .bg-white\/5');
+      revealTargets.forEach(el => el.classList.add('reveal-init'));
+
+      const staggerContainers = document.querySelectorAll('.grid, .flex');
+      staggerContainers.forEach(container => {
+        const children = Array.from(container.children).filter(ch =>
+          ch.matches('div, article, a, p, h1, h2, h3, form, section')
+        );
+        children.forEach((ch, i) => {
+          if (ch.classList.contains('reveal-init')) {
+            ch.style.transitionDelay = `${Math.min(i * 100, 400)}ms`;
+          }
+        });
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+      revealTargets.forEach(el => observer.observe(el));
+
+      // --- Hero parallax ---
+      const heroTitle = document.getElementById('hero-title');
+      const heroDeco = document.getElementById('hero-deco');
+      if (hero && heroTitle && heroDeco) {
+        hero.addEventListener('mousemove', (e) => {
+          const rect = hero.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+          heroDeco.style.transform = `translate(${x * 30}px, ${y * 30}px)`; // ~15%
+          heroTitle.style.transform = `translate(${x * -6}px, ${y * -6}px)`; // ~3% opposite
+        });
+
+        hero.addEventListener('mouseleave', () => {
+          heroDeco.style.transform = 'translate(0,0)';
+          heroTitle.style.transform = 'translate(0,0)';
+        });
+      }
+
+      // --- Navbar behavior on scroll ---
+      const header = document.querySelector('header');
+      function handleNavScroll() {
+        if (!header) return;
+        if (window.scrollY > 60) header.classList.add('nav-scrolled');
+        else header.classList.remove('nav-scrolled');
+      }
+      handleNavScroll();
+      window.addEventListener('scroll', handleNavScroll, { passive: true });
+    })();
+  </script>
+</body>
+</html>
